@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saiduzzaman Md. — Cyber Security Engineer &amp; Digital Forensic Investigator</title>
+<meta name="description" content="Portfolio of Saiduzzaman Md., a cyber security engineer, security analyst, and digital forensic investigator based in Kyoto, Japan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,560;1,9..144,450&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b1220;
+    --bg-elevated:#101a2c;
+    --text:#e9e6dd;
+    --text-dim:#8fa0b8;
+    --text-faint:#5c6a80;
+    --rule: rgba(233,230,221,0.14);
+    --amber:#e3a857;
+    --teal:#4fb6a8;
+    --red:#d1574b;
+    --serif: 'Fraunces', serif;
+    --sans: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --content-w: 760px;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:var(--amber); text-decoration:none; border-bottom:1px solid rgba(227,168,87,0.35); }
+  a:hover{ border-bottom-color:var(--amber); }
+  a:focus-visible, button:focus-visible, .navlink:focus-visible{
+    outline:2px solid var(--teal);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:var(--content-w);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:50;
+    background:rgba(11,18,32,0.0);
+    border-bottom:1px solid transparent;
+    transition:background 0.25s ease, border-color 0.25s ease;
+  }
+  .topbar.show{
+    background:rgba(11,18,32,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom-color:var(--rule);
+  }
+  .topbar-inner{
+    max-width:var(--content-w);
+    margin:0 auto;
+    padding:14px 28px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:var(--mono);
+    font-size:13px;
+  }
+  .topbar-name{ color:var(--text-dim); opacity:0; transition:opacity 0.25s ease; }
+  .topbar.show .topbar-name{ opacity:1; }
+  .navlinks{ display:flex; gap:22px; }
+  .navlinks a{ color:var(--text-dim); border-bottom:none; }
+  .navlinks a:hover{ color:var(--amber); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:150px 0 90px;
+    border-bottom:1px solid var(--rule);
+  }
+  .hero-top{
+    display:flex;
+    align-items:flex-start;
+    gap:26px;
+    margin-bottom:38px;
+  }
+  .avatar{
+    width:84px; height:84px;
+    border-radius:50%;
+    overflow:hidden;
+    flex-shrink:0;
+    border:1px solid var(--rule);
+  }
+  .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  .status-line{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--text-dim);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:10px;
+  }
+  .dot{
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--teal);
+    box-shadow:0 0 0 3px rgba(79,182,168,0.15);
+    flex-shrink:0;
+  }
+
+  h1.name{
+    font-family:var(--serif);
+    font-weight:450;
+    font-size:clamp(2.4rem, 6vw, 3.4rem);
+    line-height:1.05;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+
+  .role-typer{
+    font-family:var(--mono);
+    font-size:clamp(0.95rem, 2vw, 1.05rem);
+    color:var(--amber);
+    height:1.4em;
+    display:flex;
+    align-items:center;
+  }
+  .role-typer .cursor{
+    display:inline-block;
+    width:2px;
+    height:1em;
+    background:var(--amber);
+    margin-left:2px;
+    animation:blink 1s step-end infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .hero-lede{
+    max-width:58ch;
+    font-size:1.06rem;
+    color:var(--text);
+    margin-top:26px;
+  }
+
+  .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 22px;
+    margin-top:28px;
+    font-size:0.92rem;
+    color:var(--text-dim);
+  }
+  .hero-meta span{ display:flex; align-items:center; gap:7px; }
+  .hero-meta svg{ width:14px; height:14px; opacity:0.7; flex-shrink:0; }
+
+  .hero-actions{
+    display:flex;
+    gap:14px;
+    margin-top:30px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    font-family:var(--sans);
+    font-size:0.92rem;
+    font-weight:500;
+    padding:10px 18px;
+    border-radius:3px;
+    border:1px solid var(--rule);
+    display:inline-block;
+  }
+  .btn-primary{
+    background:var(--amber);
+    color:#1a1305;
+    border-color:var(--amber);
+    border-bottom:none;
+  }
+  .btn-primary:hover{ background:#edb669; }
+  .btn-ghost{
+    color:var(--text);
+    border-bottom:1px solid var(--rule);
+  }
+  .btn-ghost:hover{ border-color:var(--text-dim); color:var(--text); }
+
+  /* ---------- sections ---------- */
+  section{ padding:64px 0; border-bottom:1px solid var(--rule); }
+  section:last-of-type{ border-bottom:none; }
+
+  h2.section-title{
+    font-family:var(--serif);
+    font-weight:450;
+    font-size:1.7rem;
+    margin:0 0 30px;
+    letter-spacing:-0.01em;
+  }
+
+  .summary p{
+    max-width:64ch;
+    font-size:1.03rem;
+    color:var(--text);
+  }
+
+  /* ---------- experience timeline ---------- */
+  .timeline{
+    position:relative;
+    padding-left:24px;
+    border-left:1px solid var(--rule);
+  }
+  .job{
+    position:relative;
+    padding-bottom:44px;
+  }
+  .job:last-child{ padding-bottom:0; }
+  .job::before{
+    content:"";
+    position:absolute;
+    left:-29px;
+    top:6px;
+    width:9px; height:9px;
+    border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--amber);
+  }
+  .job-when{
+    font-family:var(--mono);
+    font-size:0.82rem;
+    color:var(--text-faint);
+    margin-bottom:6px;
+  }
+  .job-role{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.2rem;
+    font-weight:450;
+    margin:0 0 2px;
+  }
+  .job-org{
+    font-size:0.95rem;
+    color:var(--text-dim);
+    margin-bottom:14px;
+  }
+  .job ul{
+    margin:0;
+    padding-left:18px;
+    color:var(--text);
+  }
+  .job li{ margin-bottom:7px; font-size:0.97rem; }
+  .job li::marker{ color:var(--text-faint); }
+
+  /* ---------- publications ---------- */
+  .pub-list{ counter-reset:pub; }
+  .pub{
+    display:grid;
+    grid-template-columns:32px 1fr;
+    gap:2px 16px;
+    padding:20px 0;
+    border-top:1px solid var(--rule);
+  }
+  .pub:first-child{ border-top:none; padding-top:0; }
+  .pub-num{
+    counter-increment:pub;
+    font-family:var(--mono);
+    font-size:0.85rem;
+    color:var(--text-faint);
+    padding-top:2px;
+  }
+  .pub-num::before{ content: counter(pub, decimal-leading-zero); }
+  .pub-body{ min-width:0; }
+  .pub-tags{
+    display:flex;
+    gap:8px;
+    margin-bottom:8px;
+    flex-wrap:wrap;
+  }
+  .tag{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    padding:2px 8px;
+    border-radius:2px;
+    border:1px solid currentColor;
+    line-height:1.6;
+  }
+  .tag.type{ color:var(--text-dim); border-color:var(--rule); }
+  .tag.status-presented{ color:var(--teal); }
+  .tag.status-submitted{ color:var(--amber); }
+  .tag.status-published{ color:var(--teal); }
+  .pub-title{
+    font-size:1.01rem;
+    color:var(--text);
+    margin:0 0 6px;
+    font-weight:500;
+  }
+  .pub-meta{
+    font-size:0.9rem;
+    color:var(--text-dim);
+  }
+  .pub-meta a{ font-size:0.9rem; }
+
+  /* ---------- education ---------- */
+  .edu-item{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:4px 16px;
+    padding:18px 0;
+    border-top:1px solid var(--rule);
+    align-items:baseline;
+  }
+  .edu-item:first-child{ border-top:none; padding-top:0; }
+  .edu-school{ font-size:1.03rem; font-weight:500; }
+  .edu-when{ font-family:var(--mono); font-size:0.82rem; color:var(--text-faint); white-space:nowrap; }
+  .edu-degree{ grid-column:1 / -1; color:var(--text-dim); font-size:0.95rem; }
+  .edu-extra{ grid-column:1 / -1; color:var(--text-faint); font-size:0.88rem; margin-top:2px; }
+
+  /* ---------- certifications ---------- */
+  .cert-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px 32px;
+  }
+  @media (max-width:600px){ .cert-grid{ grid-template-columns:1fr; } }
+  .cert{ border-top:1px solid var(--rule); padding-top:14px; }
+  .cert-name{ font-weight:500; font-size:0.97rem; margin-bottom:3px; }
+  .cert-meta{ font-family:var(--mono); font-size:0.8rem; color:var(--text-faint); }
+
+  /* ---------- skills ---------- */
+  .skill-group{ margin-bottom:22px; }
+  .skill-group:last-child{ margin-bottom:0; }
+  .skill-label{
+    font-family:var(--mono);
+    font-size:0.8rem;
+    color:var(--text-faint);
+    margin-bottom:8px;
+  }
+  .skill-items{ color:var(--text); font-size:0.97rem; line-height:1.9; }
+  .skill-items .sep{ color:var(--text-faint); margin:0 6px; }
+
+  /* ---------- contact / footer ---------- */
+  .contact-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:34px;
+    margin-top:8px;
+  }
+  .contact-item .label{ font-family:var(--mono); font-size:0.78rem; color:var(--text-faint); margin-bottom:4px; }
+  .contact-item .value{ font-size:1rem; }
+
+  footer{
+    padding:36px 0 60px;
+    font-family:var(--mono);
+    font-size:0.8rem;
+    color:var(--text-faint);
+  }
+
+  ::selection{ background:var(--amber); color:#1a1305; }
+</style>
+</head>
+<body>
+
+<div class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-name">Saiduzzaman Md.</span>
+    <nav class="navlinks">
+      <a href="#experience">experience</a>
+      <a href="#publications">research</a>
+      <a href="#education">education</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-top">
+      <div class="avatar">
+        <img src="assets/headshot.png" alt="Portrait of Saiduzzaman Md.">
+      </div>
+      <div>
+        <h1 class="name">Saiduzzaman Md.</h1>
+        <div class="role-typer" id="roleTyper" aria-hidden="true"></div>
+        <div class="status-line">
+          <span class="dot"></span>
+          <span>Open to cyber security &amp; SOC analyst roles</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="hero-lede">
+      Cyber security engineer with close to four years across vulnerability assessment, digital forensics,
+      and security operations — now pursuing an M.Sc. in Information Technology with a focus on
+      AI-driven intrusion detection at KCGI, Kyoto. I work at the point where incident response,
+      applied machine learning, and hands-on forensic investigation meet.
+    </p>
+
+    <div class="hero-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+        Kyoto, Japan
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+        saiduzzaman.md1999@gmail.com
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+        +81 80 6970 7458
+      </span>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:saiduzzaman.md1999@gmail.com">Get in touch</a>
+      <a class="btn btn-ghost" href="assets/Saiduzzaman_Md_CV.pdf">Download full CV</a>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <section id="summary" class="summary">
+    <h2 class="section-title">About</h2>
+    <p>
+      I started in IT security operations — access control, device hardening, and SIEM monitoring —
+      before moving into vulnerability assessment and digital forensics, investigating fraud, identity
+      theft, and data breach cases using tools like Autopsy, Cellebrite, and FTK. That hands-on
+      investigative work is what pulled me toward research: my current M.Sc. thesis looks at making
+      self-supervised intrusion detection systems robust against unreliable or adversarial feedback in
+      the human-in-the-loop, and I collaborate on applied papers spanning intrusion detection, malware
+      detection with LLMs and vision-language models, and secure systems for wireless and cloud
+      environments.
+    </p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+
+      <div class="job">
+        <div class="job-when">Apr 2024 — Sep 2025</div>
+        <h3 class="job-role">Jr. Cyber Security Engineer</h3>
+        <div class="job-org">Techforing Ltd. · Dhaka, Bangladesh</div>
+        <ul>
+          <li>Ran comprehensive vulnerability assessments using Nessus and OpenVAS.</li>
+          <li>Used digital forensics tooling — Autopsy, Cellebrite, and FTK — to investigate evidence from multiple sources.</li>
+          <li>Analysed system logs, network traffic, and application logs to identify security incidents.</li>
+          <li>Built and implemented remediation plans for critical vulnerabilities.</li>
+          <li>Investigated fraud incidents, financial fraud, identity theft, and data breaches.</li>
+          <li>Wrote and maintained incident, vulnerability assessment, and penetration testing reports.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-when">Nov 2021 — Mar 2024</div>
+        <h3 class="job-role">IT Executive, Security</h3>
+        <div class="job-org">Grameen Bangla Holdings Limited · Dhaka, Bangladesh</div>
+        <ul>
+          <li>Managed and reviewed access control policies, VPNs, and user privileges.</li>
+          <li>Owned device hardening, patching, and update cycles.</li>
+          <li>Ran regular vulnerability assessments and employee security awareness sessions.</li>
+          <li>Monitored systems for breaches and unusual activity with Wazuh SIEM.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2 class="section-title">Research &amp; publications</h2>
+    <div class="pub-list">
+
+      <div class="pub">
+        <div class="pub-num"></div>
+        <div class="pub-body">
+          <div class="pub-tags">
+            <span class="tag type">Journal article</span>
+            <span class="tag status-published">Published</span>
+          </div>
+          <p class="pub-title">Cyber Security Threat Detection using Machine Learning Techniques</p>
+          <p class="pub-meta">
+            S. M. T. Kabir and <strong>M. Saiduzzaman</strong> — International Journal of Computational
+            Research in Science and Technology, vol. 2, no. 3, pp. 1–9, May–Jun 2026.
+            <a href="https://doi.org/10.5281/zenodo.20270619" target="_blank" rel="noopener">doi:10.5281/zenodo.20270619</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num"></div>
+        <div class="pub-body">
+          <div class="pub-tags">
+            <span class="tag type">Conference paper</span>
+            <span class="tag status-presented">Presented</span>
+          </div>
+          <p class="pub-title">Post-Quantum Secure Intrusion Detection Architecture for Wireless Sensor Networks</p>
+          <p class="pub-meta">
+            A. R. Sarker, <strong>M. Saiduzzaman</strong>, M. R. Uddin, M. S. Zahan, M. S. Rana, and M. Faruk —
+            8th International Conference on Advances in Electrical and Computer Technologies (ICAECT 2026),
+            Tamil Nadu, India, July 2026. CRC Press.
+          </p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num"></div>
+        <div class="pub-body">
+          <div class="pub-tags">
+            <span class="tag type">Conference paper</span>
+            <span class="tag status-submitted">Submitted</span>
+          </div>
+          <p class="pub-title">A Hybrid VLM-LLM Framework for Detecting AI-Generated Malware</p>
+          <p class="pub-meta">
+            <strong>M. Saiduzzaman</strong>, M. M. Rahman, T. Ahmed, M. M. Islam, A. R. Sarker, and M. M. Rahman —
+            12th IEEE International Women in Engineering Conference on Electrical and Computer Engineering
+            (WIE-ECE 2026), Dhaka, Bangladesh, October 2026. IEEE.
+          </p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num"></div>
+        <div class="pub-body">
+          <div class="pub-tags">
+            <span class="tag type">Conference paper</span>
+            <span class="tag status-submitted">Submitted</span>
+          </div>
+          <p class="pub-title">When Does Retrieval-Augmented Generation Help Malware Detection?</p>
+          <p class="pub-meta">
+            A. R. Sarker, T. Ahmed, M. A. Haque, <strong>M. Saiduzzaman</strong>, N. Jahan, and M. M. Rahman —
+            12th IEEE International Women in Engineering Conference on Electrical and Computer Engineering
+            (WIE-ECE 2026), Dhaka, Bangladesh, October 2026. IEEE.
+          </p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num"></div>
+        <div class="pub-body">
+          <div class="pub-tags">
+            <span class="tag type">Conference paper</span>
+            <span class="tag status-submitted">Submitted</span>
+          </div>
+          <p class="pub-title">KubeGuardX: Explainable Federated Graph Learning for Kubernetes Cloud Anomaly Detection and Resource Optimization</p>
+          <p class="pub-meta">
+            A. R. Sarker, R. Hasan, M. S. Reza, <strong>M. Saiduzzaman</strong>, M. S. Zahan, and M. R. Khatun —
+            5th International Conference on Machine Learning and Data Engineering (ICMLDE 2026),
+            Dehradun, India, November 2026. Elsevier.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2 class="section-title">Education</h2>
+
+    <div class="edu-item">
+      <div class="edu-school">The Kyoto College of Graduate Studies for Informatics (KCGI)</div>
+      <div class="edu-when">2025 — expected 2027</div>
+      <div class="edu-degree">M.Sc. in Information Technology, major in Artificial Intelligence — Kyoto, Japan</div>
+      <div class="edu-extra">
+        Thesis: Byzantine-Robust Human-in-the-Loop Calibration for Continual Self-Supervised Intrusion
+        Detection · Advisor: Prof. Shozo Naitō
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-school">Bangladesh University of Professionals</div>
+      <div class="edu-when">2022 — 2023</div>
+      <div class="edu-degree">M.Sc. in Information Systems Security — Dhaka, Bangladesh</div>
+      <div class="edu-extra">CGPA 3.40 / 4.00</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-school">Primeasia University</div>
+      <div class="edu-when">2018 — 2021</div>
+      <div class="edu-degree">B.Sc. in Computer Science and Engineering — Dhaka, Bangladesh</div>
+      <div class="edu-extra">CGPA 3.37 / 4.00</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-school">Dhaka Imperial College</div>
+      <div class="edu-when">2014 — 2016</div>
+      <div class="edu-degree">Higher Secondary Certificate, Science — Dhaka, Bangladesh</div>
+      <div class="edu-extra">GPA 4.75 / 5.00</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-school">Khilgaon Govt. High School</div>
+      <div class="edu-when">2012 — 2014</div>
+      <div class="edu-degree">Secondary School Certificate, Science — Dhaka, Bangladesh</div>
+      <div class="edu-extra">GPA 5.00 / 5.00</div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <h2 class="section-title">Training &amp; certifications</h2>
+    <div class="cert-grid">
+      <div class="cert">
+        <div class="cert-name">Certified Ethical Hacker (CEHv11)</div>
+        <div class="cert-meta">Arena Web Security · 120 days</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name">Linux Server Administration with Windows Server 2016 Management</div>
+        <div class="cert-meta">BASIS SEIP · 90 days</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name">Cisco Certified Network Associate (CCNAv1.0)</div>
+        <div class="cert-meta">CSL Training Center · 72 hours</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name">Red Hat Certified System Administrator (RHCSAv9)</div>
+        <div class="cert-meta">CSL Training Center · 56 hours</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name">Professional English Communication Skill — Grade A</div>
+        <div class="cert-meta">Workplace Skills Development Academy, NZ · 7 days</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2 class="section-title">Skills &amp; tools</h2>
+
+    <div class="skill-group">
+      <div class="skill-label">Security tools</div>
+      <div class="skill-items">MS Office<span class="sep">/</span>Wazuh<span class="sep">/</span>Burp Suite<span class="sep">/</span>Nessus<span class="sep">/</span>Wireshark<span class="sep">/</span>Maltego<span class="sep">/</span>Nmap<span class="sep">/</span>SQLmap<span class="sep">/</span>Epios<span class="sep">/</span>Autopsy<span class="sep">/</span>Cellebrite<span class="sep">/</span>FTK<span class="sep">/</span>OWASP ZAP<span class="sep">/</span>DAST</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Frameworks</div>
+      <div class="skill-items">MITRE ATT&amp;CK<span class="sep">/</span>Cyber Kill Chain<span class="sep">/</span>Pyramid of Pain<span class="sep">/</span>Diamond Model<span class="sep">/</span>NIST CSF</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Languages &amp; data</div>
+      <div class="skill-items">Python<span class="sep">/</span>C<span class="sep">/</span>MySQL<span class="sep">/</span>Git &amp; GitHub</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Spoken languages</div>
+      <div class="skill-items">Bangla (native)<span class="sep">/</span>English (professional)</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p class="hero-lede" style="margin-top:0;">
+      I'm currently based in Kyoto and open to cyber security, SOC analyst, and digital forensics roles,
+      as well as research collaborations in AI-driven intrusion detection.
+    </p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="label">Email</div>
+        <div class="value"><a href="mailto:saiduzzaman.md1999@gmail.com">saiduzzaman.md1999@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Phone</div>
+        <div class="value">+81 80 6970 7458</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Location</div>
+        <div class="value">Sakyo Ward, Kyoto, Japan</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Saiduzzaman Md. — built with plain HTML/CSS/JS.
+  </footer>
+
+</main>
+
+<script>
+  // Top bar visibility on scroll
+  const topbar = document.getElementById('topbar');
+  const onScroll = () => {
+    if (window.scrollY > 260) topbar.classList.add('show');
+    else topbar.classList.remove('show');
+  };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Hero role typewriter — single orchestrated moment, respects reduced motion
+  const roles = [
+    'Cyber Security Engineer',
+    'Security Analyst',
+    'Digital Forensic Investigator'
+  ];
+  const typerEl = document.getElementById('roleTyper');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReduced) {
+    typerEl.textContent = roles.join(' · ');
+  } else {
+    let roleIndex = 0, charIndex = 0, deleting = false;
+
+    function tick() {
+      const current = roles[roleIndex];
+      if (!deleting) {
+        charIndex++;
+        typerEl.innerHTML = current.slice(0, charIndex) + '<span class="cursor"></span>';
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(tick, 1400);
+          return;
+        }
+      } else {
+        charIndex--;
+        typerEl.innerHTML = current.slice(0, charIndex) + '<span class="cursor"></span>';
+        if (charIndex === 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+      }
+      setTimeout(tick, deleting ? 35 : 65);
+    }
+    tick();
+  }
+</script>
+
+</body>
+</html>
