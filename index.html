@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saiduuzzaman MD. â�� AI Â· ML Â· Cybersecurity</title>
+  <meta name="description" content="Academic portfolio of Saiduuzzaman MD â�� Prospective PhD applicant in AI, Machine Learning & Cybersecurity." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="dark">
+
+  <!-- boot preloader -->
+  <div id="preloader">
+    <div class="boot-log" id="bootLog"></div>
+    <div class="boot-bar"><span></span></div>
+  </div>
+
+  <!-- fx layers -->
+  <canvas id="matrix"></canvas>
+  <canvas id="network"></canvas>
+  <div id="scanlines"></div>
+  <div id="cursor"></div>
+  <div id="progress"></div>
+
+  <!-- ============ NAV ============ -->
+  <header id="topbar">
+    <div class="nav">
+      <a class="brand" href="#home">~/<span>saiduuzzaman</span><i class="blink">_</i></a>
+      <nav>
+        <button id="menuBtn" aria-label="Menu">[ â�° ]</button>
+        <ul id="navLinks">
+          <li><a href="#home" class="active">// home</a></li>
+          <li><a href="#education">// education</a></li>
+          <li><a href="#interests">// interests</a></li>
+          <li><a href="#experience">// experience</a></li>
+          <li><a href="#projects">// pubs</a></li>
+          <li><a href="#skills">// skills</a></li>
+          <li><button id="themeBtn" title="Toggle day mode">â��</button></li>
+          <li><a href="PhD CV 2026.pdf" download="Saiduuzzaman_MD_CV.pdf" class="nav-cta">â¬� cv.pdf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="home">
+    <div class="wrap hero">
+      <div class="hero-text">
+        <div class="term-line"><span class="prompt">saiduzzaman@kcg</span>:<span class="path">~/research</span>$ <span id="bootCmd"></span><i class="caret">â�®</i></div>
+        <h1 class="glitch" data-text="SAIDUZZAMAN MD.">SAIDUZZAMAN <span>MD.</span></h1>
+        <p class="decrypt" id="taglineDecrypt">AI Â· MACHINE LEARNING Â· CYBERSECURITY</p>
+        <p class="tagline">
+          Researching the intersection of <b>AI and cybersecurity</b> â�� adversarial &amp; robust AI,
+          trustworthy learning systems, and intelligent cyber defense.
+        </p>
+        <div class="meta">
+          <span>[ð��� Kyoto, Japan]</span>
+          <span>[â�� md.saiduzzaman.cs@gmail.com]</span>
+          <span>[ð��� M.Sc. IT (AI) @ KCGI]</span>
+        </div>
+
+        <div class="stats" id="stats">
+          <div class="stat"><b data-count="5" data-hex="0x">0</b><span>publications</span></div>
+          <div class="stat"><b data-count="3">0</b><span>degrees</span></div>
+          <div class="stat"><b data-count="2">0</b><span>yrs industry</span></div>
+          <div class="stat"><b data-count="4">0</b><span>certifications</span></div>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn btn-primary magnetic" href="PhD CV 2026.pdf" download="Saiduuzzaman_MD_CV.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            download_cv.pdf
+          </a>
+          <a class="btn btn-ghost magnetic" href="#projects">view_pubs --all â��</a>
+        </div>
+      </div>
+
+      <div class="photo-slot">
+        <div class="badge-float b1">ð��� <b>M.Sc.</b> AI @ KCGI</div>
+        <div class="badge-float b2">ð��¡ï¸� <b>CEH</b> Â· RHCSA Â· CCNA</div>
+        <div class="idcard">
+          <div class="scanline"></div>
+          <div class="corner tl"></div><div class="corner tr"></div>
+          <div class="corner bl"></div><div class="corner br"></div>
+          <div class="idcard-inner photo-inner">
+            <!-- â�¼ Replace with your real photo:
+                 <img src="profile.jpg" alt="Saiduuzzaman MD" /> -->
+            <div class="photo-fallback">SM</div>
+          </div>
+          <div class="id-meta">
+            <span>ID: SM-2026-KYO</span>
+            <span class="live"><i></i>ONLINE</span>
+          </div>
+        </div>
+        <div class="photo-caption">Saiduuzzaman MD. â�� Kyoto, Japan</div>
+      </div>
+    </div>
+    <a href="#education" id="scrollHint" aria-label="Scroll down"><span></span>SCROLL</a>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section id="education">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="sec-no">01</div>
+        <span class="kicker">// academic_background</span>
+        <h2 class="scramble" data-text="Education">Education</h2>
+        <p class="sec-intro">A research-driven path through informatics, security engineering, and computer science.</p>
+      </div>
+      <div class="timeline">
+        <div class="card tilt reveal" data-tilt>
+          <h3>The Kyoto College of Informatics and Graduate Studies (KCGI)</h3>
+          <div class="sub">M.Sc. in Information Technology â�� Major: Artificial Intelligence</div>
+          <p class="when">Expected Sep. 2027 Â· Kyoto, Japan Â· English medium</p>
+          <p><b>Thesis:</b> <em>Byzantine-Robust Human-in-the-Loop Calibration for Continual Self-Supervised Intrusion Detection</em></p>
+          <p>Advisor: Prof. Shozo NaitÅ�</p>
+          <span class="gpa">CGPA 3.40 / 4.00</span>
+        </div>
+        <div class="card tilt reveal" data-tilt>
+          <h3>Bangladesh University of Professionals</h3>
+          <div class="sub">M.Engg. in Information Systems Security</div>
+          <p class="when">2022 â�� 2023 Â· Dhaka, Bangladesh Â· English medium</p>
+          <span class="gpa">CGPA 3.37 / 4.00</span>
+        </div>
+        <div class="card tilt reveal" data-tilt>
+          <h3>Primeasia University</h3>
+          <div class="sub">B.Sc. in Computer Science and Engineering</div>
+          <p class="when">2018 â�� 2021 Â· Dhaka, Bangladesh Â· English medium</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH INTERESTS ============ -->
+  <section id="interests">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="sec-no">02</div>
+        <span class="kicker">// what_drives_me</span>
+        <h2 class="scramble" data-text="Research Interests">Research Interests</h2>
+        <p class="sec-intro">Building reliable, resilient, and trustworthy intelligent security systems.</p>
+      </div>
+      <div class="card terminal reveal">
+        <div class="term-head"><i class="dot r"></i><i class="dot y"></i><i class="dot g"></i><span>research_focus.log</span></div>
+        <div class="term-body">
+          <p class="term-line"><span class="prompt">$</span> cat research_statement.txt</p>
+          <p class="statement">
+            I am interested in research at the intersection of AI and cybersecurity â�� adversarial and
+            robust AI, trustworthy and secure AI, continual and adaptive learning for cyber defense,
+            and privacy-preserving federated learning, along with related areas of reliable and
+            resilient intelligent security systems.
+          </p>
+          <p class="term-line"><span class="prompt">$</span> ls ./focus_areas/</p>
+          <div class="chips" id="chips">
+            <span class="chip">Adversarial &amp; Robust AI</span>
+            <span class="chip">Trustworthy &amp; Secure AI</span>
+            <span class="chip">Continual Learning for Cyber Defense</span>
+            <span class="chip">AI-Driven Intrusion &amp; Anomaly Detection</span>
+            <span class="chip">AI-Powered Malware &amp; Threat Detection</span>
+            <span class="chip">Automated Vulnerability Discovery</span>
+            <span class="chip">Privacy-Preserving Federated Learning</span>
+            <span class="chip">Byzantine-Robust Collaborative Learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="sec-no">03</div>
+        <span class="kicker">// professional_practice</span>
+        <h2 class="scramble" data-text="Experience">Experience</h2>
+        <p class="sec-intro">Hands-on industry experience in cybersecurity engineering, forensics, and security operations.</p>
+      </div>
+      <div class="grid g2">
+        <div class="card tilt reveal" data-tilt>
+          <div class="card-tag">SEC-OPS</div>
+          <h3>Jr. Cyber Security Engineer</h3>
+          <div class="sub">Techforing Ltd. Â· Dhaka</div>
+          <p class="when">Apr. 2024 â�� Sep. 2025</p>
+          <ul>
+            <li>Vulnerability assessments with Nessus &amp; OpenVAS; remediation of critical findings.</li>
+            <li>Digital forensics with Autopsy, Cellebrite, and FTK across disk, mobile, and network sources.</li>
+            <li>Log analysis to identify and characterize security incidents.</li>
+            <li>Fraud, identity-theft, and data-breach investigations; authored pentest &amp; incident reports.</li>
+          </ul>
+        </div>
+        <div class="card tilt reveal" data-tilt>
+          <div class="card-tag">BLUE-TEAM</div>
+          <h3>IT Executive â�� Security</h3>
+          <div class="sub">Grameen Bangla Holdings Ltd. Â· Dhaka</div>
+          <p class="when">Nov. 2021 â�� Mar. 2024</p>
+          <ul>
+            <li>Device hardening standards and organization-wide patch cadence.</li>
+            <li>Vulnerability assessments and employee security-awareness training.</li>
+            <li>Breach &amp; anomaly monitoring using Wazuh SIEM.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="sec-no">04</div>
+        <span class="kicker">// research_output</span>
+        <h2 class="scramble" data-text="Publications">Publications</h2>
+        <p class="sec-intro">Thesis research and peer-reviewed work on robust, AI-driven security.</p>
+      </div>
+
+      <div class="card tilt reveal thesis" data-tilt>
+        <div class="card-tag">THESIS</div>
+        <h3>Master's Thesis Research â�� KCGI</h3>
+        <div class="sub">Byzantine-Robust Human-in-the-Loop Calibration for Continual Self-Supervised Intrusion Detection</div>
+        <ul>
+          <li>Continual &amp; self-supervised learning for adaptive network intrusion detection.</li>
+          <li>Human-in-the-loop calibration incorporating analyst feedback into model adaptation.</li>
+          <li>Robustness against Byzantine or unreliable feedback in collaborative learning.</li>
+          <li>Evaluating anomaly detection &amp; attack classification under evolving network conditions.</li>
+        </ul>
+      </div>
+
+      <div class="filters reveal" id="filters">
+        <span class="filter-label">$ filter:</span>
+        <button class="fbtn active" data-filter="all">--all</button>
+        <button class="fbtn" data-filter="journal">--journal</button>
+        <button class="fbtn" data-filter="conference">--conference</button>
+        <button class="fbtn" data-filter="published">--published</button>
+        <button class="fbtn" data-filter="submitted">--submitted</button>
+      </div>
+
+      <div class="grid pubs" id="pubs">
+        <div class="card tilt reveal pub" data-tilt data-type="journal published">
+          <div class="pubrow"><div class="num">[1]</div><div>
+            <div class="venue">IJCST Â· Journal</div>
+            <p><b>Cyber Security Threat Detection using Machine Learning Techniques</b> â�� S. M. T. Kabir, M. Saiduzzaman. Vol. 2, No. 3, pp. 1â��9, Mayâ��Jun. 2026. DOI: 10.5281/zenodo.20270619</p>
+            <span class="status published">â�� published</span>
+          </div></div>
+        </div>
+        <div class="card tilt reveal pub" data-tilt data-type="conference published">
+          <div class="pubrow"><div class="num">[2]</div><div>
+            <div class="venue">ICAECT 2026 Â· CRC Press</div>
+            <p><b>Post-Quantum Secure Intrusion Detection Architecture for Wireless Sensor Networks</b> â�� A. R. Sarker, M. Saiduzzaman, et al. Tamil Nadu, India, Jul. 2026.</p>
+            <span class="status presented">â�� presented</span>
+          </div></div>
+        </div>
+        <div class="card tilt reveal pub" data-tilt data-type="conference submitted">
+          <div class="pubrow"><div class="num">[3]</div><div>
+            <div class="venue">IEEE WIECON-ECE 2026</div>
+            <p><b>A Hybrid VLMâ��LLM Framework for Detecting AI-Generated Malware</b> â�� M. Saiduzzaman, M. M. Rahman, T. Ahmed, et al. Dhaka, Bangladesh, Oct. 2026.</p>
+            <span class="status submitted">â�� submitted</span>
+          </div></div>
+        </div>
+        <div class="card tilt reveal pub" data-tilt data-type="conference submitted">
+          <div class="pubrow"><div class="num">[4]</div><div>
+            <div class="venue">IEEE WIECON-ECE 2026</div>
+            <p><b>When Does Retrieval-Augmented Generation Help Malware Detection?</b> â�� A. R. Sarker, T. Ahmed, M. A. Haque, M. Saiduzzaman, et al. Oct. 2026.</p>
+            <span class="status submitted">â�� submitted</span>
+          </div></div>
+        </div>
+        <div class="card tilt reveal pub" data-tilt data-type="conference submitted">
+          <div class="pubrow"><div class="num">[5]</div><div>
+            <div class="venue">ICMLDE 2026 Â· Elsevier</div>
+            <p><b>KubeGuardX: Explainable Federated Graph Learning for Kubernetes Cloud Anomaly Detection and Resource Optimization</b> â�� A. R. Sarker, R. Hasan, M. S. Reza, M. Saiduzzaman, et al. Dehradun, India, Nov. 2026.</p>
+            <span class="status submitted">â�� submitted</span>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="sec-no">05</div>
+        <span class="kicker">// toolkit</span>
+        <h2 class="scramble" data-text="Technical Skills">Technical Skills</h2>
+        <p class="sec-intro">From ML frameworks to security operations and forensics.</p>
+      </div>
+
+      <div class="bars reveal">
+        <div class="bar"><div class="bar-head"><span>Machine Learning &amp; AI</span><b>90%</b></div><div class="track"><i data-w="90"></i></div></div>
+        <div class="bar"><div class="bar-head"><span>Security &amp; Forensics</span><b>92%</b></div><div class="track"><i data-w="92"></i></div></div>
+        <div class="bar"><div class="bar-head"><span>Software Engineering</span><b>80%</b></div><div class="track"><i data-w="80"></i></div></div>
+        <div class="bar"><div class="bar-head"><span>Systems Administration</span><b>85%</b></div><div class="track"><i data-w="85"></i></div></div>
+      </div>
+
+      <div class="grid g3">
+        <div class="card skill-group reveal" data-tilt>
+          <h3><span class="dot"></span>Programming &amp; ML</h3>
+          <div class="tags"><span class="tag">Python</span><span class="tag">C</span><span class="tag">SQL</span><span class="tag">PyTorch</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span></div>
+        </div>
+        <div class="card skill-group reveal" data-tilt>
+          <h3><span class="dot"></span>Engineering &amp; Deployment</h3>
+          <div class="tags"><span class="tag">FastAPI</span><span class="tag">REST APIs</span><span class="tag">SQLite</span><span class="tag">Pytest</span></div>
+        </div>
+        <div class="card skill-group reveal" data-tilt>
+          <h3><span class="dot"></span>Security &amp; Forensics</h3>
+          <div class="tags"><span class="tag">Wazuh</span><span class="tag">Burp Suite</span><span class="tag">Nessus</span><span class="tag">Wireshark</span><span class="tag">Nmap</span><span class="tag">OWASP ZAP</span><span class="tag">Autopsy</span><span class="tag">Cellebrite</span><span class="tag">FTK</span></div>
+        </div>
+        <div class="card skill-group reveal" data-tilt>
+          <h3><span class="dot"></span>Frameworks &amp; Standards</h3>
+          <div class="tags"><span class="tag">MITRE ATT&amp;CK</span><span class="tag">Kill Chain</span><span class="tag">Diamond Model</span><span class="tag">NIST CSF</span></div>
+        </div>
+        <div class="card skill-group reveal" data-tilt>
+          <h3><span class="dot"></span>Systems</h3>
+          <div class="tags"><span class="tag">Linux Server</span><span class="tag">Windows Server</span></div>
+        </div>
+        <div class="card skill-group reveal" data-tilt>
+          <h3><span class="dot"></span>Certifications</h3>
+          <div class="tags"><span class="tag">CEH v11</span><span class="tag">RHCSA v9</span><span class="tag">CCNA</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-card reveal">
+        <div class="corner tl"></div><div class="corner tr"></div>
+        <div class="corner bl"></div><div class="corner br"></div>
+        <span class="kicker" style="color:var(--accent)">// lets_connect</span>
+        <h2 class="scramble" data-text="Open to Ph.D. Opportunities">Open to Ph.D. Opportunities</h2>
+        <p>Actively seeking a doctoral position in AI, machine learning, and cybersecurity. If your group works on robust, trustworthy, or secure intelligent systems â�� I'd love to hear from you.</p>
+        <div class="contact-row">
+          <a href="mailto:md.saiduzzaman.cs@gmail.com">â�� md.saiduzzaman.cs@gmail.com</a>
+          <a href="PhD CV 2026.pdf" download="Saiduuzzaman_MD_CV.pdf">â¬� download_cv.pdf</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">Â© 2026 <b>SAIDUZZAMAN MD.</b> â�� prospective Ph.D. applicant Â· AI, ML &amp; cybersecurity <span class="hex-dump" id="hexDump"></span></div>
+  </footer>
+
+  <button id="backTop" aria-label="Back to top">â��</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
